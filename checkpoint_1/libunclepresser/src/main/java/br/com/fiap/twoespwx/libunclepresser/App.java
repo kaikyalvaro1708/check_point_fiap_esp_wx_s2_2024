@@ -1,3 +1,16 @@
+/*
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ *
+ * GRUPO: DO CHAPÉU DE PALHA
+ * Autores:
+ *      - Juan Pinheiro     -   rm552202
+ *      - Luigi Ferrara     -   rm98047
+ *      - Lucas Rodrigues   -   rm98344 ( Foi para o next )
+ *      - Kaiky Alvaro      -   rm98118 ( Foi para o next )
+ */
+
 package br.com.fiap.twoespwx.libunclepresser;
 
 import java.io.*;
@@ -32,7 +45,7 @@ public class App {
         double compressionRate = RLECompressor.calculateCompressionRate(input, compressed);
 
         System.out.println(" -----------------------------------------------------------");
-        System.out.println("|           LIB UNCLE PRESSER - GRUPO BATATA-DOCE           |");
+        System.out.println("|           LIB UNCLE PRESSER - GRUPO DO CHAPÉU DE PALHA    |");
         System.out.println("|-----------------------------------------------------------|");
         System.out.println("|                                                           |");
         System.out.println("| INPUT  FILENAME: " + Paths.get(inputPath).getFileName() + "                               |");
