@@ -11,8 +11,54 @@
  *      - Lucas Rodrigues   -   rm98344 ( Foi para o next )
  *      - Kaiky Alvaro      -   rm98118 ( Foi para o next )
  */
-
 package br.com.fiap.twoespwx.libunclepresser;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+
+
+public class App {
+    public static void main(String[] args) {
+        System.out.println("LIB UNCLE PRESSER - Bando do chapéu de palha");
+
+        if (args.length != 2) {
+            System.out.println("Uso: java App entrada.txt saida.txt");
+            return;
+        }
+
+        String inputPath = args[0];
+        String outputPath = args[1];
+
+        try {
+            String input = readFile(inputPath);
+            String compressed = compress(input);
+            writeFile(outputPath, compressed);
+            System.out.println("Compressão concluída!");
+        } catch (IOException e) {
+            System.out.println("Erro: " + e.getMessage());
+        }
+    }
+
+    static String compress(String input) {
+        if (input.isEmpty()) {
+            return "";
+        }
+
+        StringBuilder result = new StringBuilder();
+        char currentChar = input.charAt(0);
+        int count = 1;
+
+        for (int i = 1; i < input.length(); i++) {
+            if (input.charAt(i) == currentChar) {
+                count++;
+            } else {
+                result.append(currentChar).append(count);
+                currentChar = input.charAt(i);
+                count = 1;
+            }
+        }
+
 
 import java.io.*;
 import java.nio.file.*;
